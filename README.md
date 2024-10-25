@@ -17,3 +17,10 @@ exploit "
 # Phishing.py #
 
 " python3 Phishing.py "
+
+# Tkinter-haking-wifi.py #
+
+arabic :
+هذا الملف الرمحي لبايثون الذي يحتوي على واجهة جيدة لتسهيل عملية الاختراق للوايفاي على المستعمل،وشكرا
+English :
+This is a Python spear file that contains a good interface to facilitate the process of hacking Wi-Fi for the user. Thank you.
