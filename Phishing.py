@@ -3,6 +3,14 @@ import smtplib
 from email.mime.text import MIMEText
 from scapy.all import ARP, Ether, srp, send
 import subprocess
+import arabic_reshaper
+from bidi.algorithm import get_display
+
+def ar(text):
+    reshaped = arabic_reshaper.reshape(text)
+    bidi_text = get_display(reshaped)
+    return bidi_text
+
 
 def banner():
     print("""
